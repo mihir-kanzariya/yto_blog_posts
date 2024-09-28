@@ -4,7 +4,7 @@ date: "2024-09-28"
 excerpt: "A look at our sleek and efficient new blogging system built with Next.js and Tailwind CSS, designed for fast, responsive, and visually appealing content delivery."
 category: "Web Development"
 tags: ["Next.js", "Tailwind CSS", "Blogging", "GitHub"]
-coverImage: "https://source.unsplash.com/random/1600x900/?blog"
+coverImage: "https://raw.githubusercontent.com/Dicklesworthstone/yto_blog_posts/refs/heads/main/blog_01_banner.webp"
 author: "Jeffrey Emanuel"
 authorImage: "https://pbs.twimg.com/profile_images/1225476100547063809/53jSWs7z_400x400.jpg"
 authorBio: "Software Engineer and Founder of YouTube Transcript Optimizer"
