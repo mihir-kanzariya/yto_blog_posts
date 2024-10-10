@@ -34,7 +34,10 @@ For the calls to the LLM APIs (mostly OpenAI's, but I kept it general so that it
 
 These models are *incredibly cheap* to use while still being pretty powerful and smart (seriously, it's hard to overstate how cheap they are to use compared to the original GPT4 pricing from a year ago, let alone 18 months ago— it's like 95%+ cheaper and approaching the "too cheap to meter" level, where you don't have to worry so much about it).
 
-I prefer GPT4o-mini in general, but they are both strong. But as good as these models are (especially considering the cost), they do have some pretty important limitations. What I've found is that they can do very well when you 1) don't give them too much context to work with; the less, the better!; and 2) you don't ask them to do too many different things at once, especially unrelated things.
+I prefer GPT4o-mini in general, but they are both strong. But as good as these models are (especially considering the cost), they do have some pretty important limitations. What I've found is that they can do very well when you:
+
+ 1. Don't give them too much context to work with; the less, the better!
+ 2. Don't ask them to do too many different things at once, especially unrelated things.
 
 What that means in practice is chunking up your original input text if it's even moderately long, and for any complex transformation you want to apply to the input text, breaking it up into a pipeline of simpler stages, where the output of the first stage becomes the input to the second stage, and so on. What do I mean exactly by this? Take the case of this project, where we are converting the raw transcript utterances into a polished written document in markdown formatting. The first stage would be focused on prompting the model to take the handful of utterances given (along with a bit of context of the previous utterance chunk) and turning them into complete, written sentences with proper punctuation.
 
