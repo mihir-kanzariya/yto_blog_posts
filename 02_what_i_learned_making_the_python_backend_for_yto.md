@@ -25,8 +25,8 @@ I decided early on that I only wanted to use FastAPI for the heavy lifting, with
 For the FastAPI app, I focused heavily on optimizing everything so that all major functions were completely async, and all file and database access was also done in a fully async way.
 
 There were two main areas that represented the bulk of processing time/effort:
-     - Generating the transcript from the audio of the video using Whisper;
-     - Making all the calls to the LLM backends efficiently and putting the results together.
+ - Generating the transcript from the audio of the video using Whisper;
+ - Making all the calls to the LLM backends efficiently and putting the results together.
 
 For the transcript generation, I was really focused on having this be as accurate as possible, even if it made things a bit slower. One thing I found really puzzling and weird is that, although OpenAI does offer an API to use Whisper for transcriptions, it's the really old Whisper1 model, even though they've publicly released the weights for the much more accurate Whisper3 model. So if I wanted the very best accuracy, I would have to run this part myself. I've also found that if you crank up certain parameters a bit higher than normal, the quality improves even more (such as the `beam_size` parameter, which I set to 10). I ended up using the [faster_whisper](https://github.com/SYSTRAN/faster-whisper) library on the GPU, and in particular, the new BatchedInferencePipeline, which made things go much faster (I know that OpenAI recently [released](https://github.com/openai/whisper/discussions/2363) an even faster "turbo" version of Whisper, but I haven't integrated that yet; I'm not sure it's worth it given that it supposedly has slightly lower accuracy and my existing solution is already pretty fast).
 
