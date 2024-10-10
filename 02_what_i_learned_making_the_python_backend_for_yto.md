@@ -1,5 +1,5 @@
 ---
-title: "What I Learned from Making the Python Backend for YouTubeTranscriptOptimizer.com"
+title: "What I Learned from Making the Python Backend for YouTube Transcript Optimizer"
 date: "2024-10-09"
 excerpt: "An in-depth look at the technical challenges and solutions in creating the FastAPI backend for YouTubeTranscriptOptimizer.com, a powerful tool for transforming YouTube content into polished written documents and interactive quizzes."
 category: "Web Development"
