@@ -206,7 +206,7 @@ By leveraging GitHub as a CMS and combining it with Next.js, we've created a blo
 - SEO-friendly
 - Free to host
 
-This post itself is written in Markdown and served through the system, demonstrating its capabilities. I believe this approach to blogging hits a sweet spot for developers and technical teams. It's simple enough to start using immediately but powerful enough to grow with your needs.
+This post itself is written in Markdown (You can see the actual markdown itself [here](https://github.com/Dicklesworthstone/yto_blog_posts/blob/main/03_nextjs_github_blogging_system.md)-- how is that for meta? and served through the system, demonstrating its capabilities. I believe this approach to blogging hits a sweet spot for developers and technical teams. It's simple enough to start using immediately but powerful enough to grow with your needs.
 
 ## Code
 
