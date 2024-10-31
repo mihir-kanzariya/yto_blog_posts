@@ -53,14 +53,14 @@ The resulting pages are statically generated at build time, meaning they're nice
 - **Version Control**: Full history of all changes, free branching and collaboration
 - **No Backend**: Static files mean no server to maintain
 - **Build-time Generation**: Pages are pre-rendered for optimal performance
-- **Markdown + Git Flow**: Write posts in your favorite editor, push to deploy
+- **Markdown + Git Flow**: Write posts in your favorite editor, push to deploy, without learning a new language
 
 ### Practical Advantages
 - **Zero Maintenance**: No security updates, no database backups
 - **Perfect for Developers**: Use the tools you already know
 - **Instant Preview**: Run locally to see exactly how posts will look
 - **Easy Collaboration**: Accept guest posts via pull requests
-- **Free Hosting**: Can be hosted on Vercel, Netlify, or GitHub Pages
+- **Free Hosting**: Can be hosted on Vercel or just using Next.js/nginx (this is what I do, since I'm already using that for my Next.js app!)
 
 ## The Technical Stack
 
@@ -77,7 +77,7 @@ The system architecture has three main components working together:
 
 First, there's the GitHub repository that serves as our content store. This is just a collection of Markdown files, each representing a blog post. The files include YAML frontmatter at the top with metadata like titles, dates, and tags. You can also include images in the repo, or use a CDN or other host.
 
-Second, we have the content fetching system. Using GitHub's REST API, we first get a list of all Markdown files in the repository. For each file, we then fetch its raw content. The system authenticates with GitHub using an access token and handles the API responses appropriately.
+Second, we have the content fetching system. Using GitHub's REST API, we first get a list of all Markdown files in the repository. For each file, we then fetch its raw content. The system can optionally authenticate with GitHub using an access token (for private repos) and handles the API responses appropriately.
 
 Once we have the raw files, we process them: the frontmatter is parsed using the `gray-matter` library to extract metadata, and the main content is processed through our Markdown pipeline. The posts are then sorted by date, with the most recent first.
 
@@ -130,7 +130,6 @@ bun run build
 bun run start
 ```
 
-
 ## Comparison with Other Approaches
 
 ### WordPress
@@ -141,14 +140,14 @@ WordPress is powerful but comes with overhead:
 - Overkill for simple blogs
 - Server costs and maintenance
 
-This system replaces all that with a few static files and Git operations you're already doing.
+This system replaces all that with a few static files and Git operations you're already doing. And even non-technical people can use the visual markdown preview tools in GitHub, and can have LLMs like ChatGPT take a plaintext post and turn it into markdown; the YAML frontmatter can then simply be compied and tweaked from a previous blog post.
 
 ### Medium
 Medium is polished but limiting:
 - Content lives on their platform
 - Limited technical customization
 - Can't integrate with your existing app
-- Less control over SEO and monetization
+- Less control over SEO, monetization, and analytics
 
 This approach gives you full control while maintaining simplicity.
 
