@@ -10,10 +10,9 @@ authorImage: "https://pbs.twimg.com/profile_images/1225476100547063809/53jSWs7z_
 authorBio: "Software Engineer and Founder of YouTube Transcript Optimizer"
 ---
 
-I recently needed a blog for my recent Next.js app, [YouTube Transcript Optimizer](https://youtubetranscriptoptimizer.com/), and wanted something that would look really nice and that could be integrated into my existing Next.js app to keep deployment simple and to give me more control over how it is hosted and configured. My goal was to get something that looked very slick, using modern CSS styling and rich client-side effect, that would look great on desktop and mobile, and most importantly, something that would be very easy and convenient for me to add and edit posts. You may remember seeing my first real blog post made using this system, since I recently posted it [to HN](https://news.ycombinator.com/item?id=41859968). 
+I recently needed a blog for my recent Next.js app, [YouTube Transcript Optimizer](https://youtubetranscriptoptimizer.com/), and wanted something that would look really nice and that could be integrated into my existing Next.js app to keep deployment simple and to give me more control over how it's hosted and configured. My goal was to get something that looked very slick, using modern CSS styling and rich client-side effects that would look great on desktop and mobile, and most importantly, something that would be very easy and convenient for me to create new blog posts and edit existing posts. You may remember seeing my first real blog post made using this system, since I recently posted it [to HN](https://news.ycombinator.com/item?id=41859968). 
 
 The core idea is straightforward: write Markdown files, push them to a GitHub repo, and let Next.js handle the rendering and delivery. It's turned out to be a surprisingly elegant solution that's both powerful and maintenance-free.
-
 
 ## How It Works
 
@@ -33,8 +32,10 @@ authorBio: "Software Engineer and Founder of YouTube Transcript Optimizer"
 
 ---
 
-Your content here...
+Your content here as markdown...
 ```
+
+You can see what this looks like in practice using my last blog post which was linked above; [here](https://github.com/Dicklesworthstone/yto_blog_posts/blob/main/02_what_i_learned_making_the_python_backend_for_yto.md?plain=1) is the corresponding markdown file for that blog post.
 
 When the Next.js application builds, it:
 1. Fetches these files from GitHub using their API
@@ -61,47 +62,6 @@ The resulting pages are statically generated at build time, meaning they're nice
 - **Easy Collaboration**: Accept guest posts via pull requests
 - **Free Hosting**: Can be hosted on Vercel, Netlify, or GitHub Pages
 
-## Comparison with Other Approaches
-
-### WordPress
-WordPress is powerful but comes with overhead:
-- Requires database setup and maintenance
-- Needs regular security updates
-- Plugin compatibility issues
-- Overkill for simple blogs
-- Server costs and maintenance
-
-This system replaces all that with a few static files and Git operations you're already doing.
-
-### Medium
-Medium is polished but limiting:
-- Content lives on their platform
-- Limited technical customization
-- No code syntax highlighting out of the box
-- Can't integrate with your existing app
-- Less control over SEO and monetization
-
-This approach gives you full control while maintaining simplicity.
-
-### Custom Solutions
-Building a custom blog often means:
-- Setting up a database
-- Creating an admin interface
-- Building an editor
-- Managing user sessions
-- Handling image uploads
-
-This system leverages GitHub's infrastructure for all of that.
-
-### Static Site Generators (Jekyll, Hugo, etc.)
-While excellent tools, traditional SSGs:
-- Often require learning new templating languages
-- Need separate deployment processes
-- Can't easily integrate with existing Next.js apps
-- Have their own complexity for themes and plugins
-
-This approach integrates naturally with Next.js applications while maintaining the benefits of static generation.
-
 ## The Technical Stack
 
 The core functionality is built with:
@@ -110,20 +70,6 @@ The core functionality is built with:
 - **remark/rehype**: For Markdown processing
 - **GitHub API**: For content fetching
 - **Tailwind CSS**: For styling
-
-## Performance Advantages
-
-The system is pretty fast because:
-
-- Pages are statically generated
-- Images are automatically optimized
-- Styles are purged and minimized
-- JavaScript is minimal
-- Content is served from the edge
-
-## SEO Benefits
-
-The system automatically generates rich metadata for every blog post. When a post is rendered, it extracts key information like the title, description, and cover image from the frontmatter. This data is then used to create comprehensive metadata tags including OpenGraph data for social media sharing. All of this happens at build time, so search engines and social media platforms get perfectly optimized content without any runtime overhead.
 
 ## Core Architecture
 
@@ -184,6 +130,62 @@ bun run build
 bun run start
 ```
 
+
+## Comparison with Other Approaches
+
+### WordPress
+WordPress is powerful but comes with overhead:
+- Requires database setup and maintenance
+- Needs regular security updates
+- Plugin compatibility issues
+- Overkill for simple blogs
+- Server costs and maintenance
+
+This system replaces all that with a few static files and Git operations you're already doing.
+
+### Medium
+Medium is polished but limiting:
+- Content lives on their platform
+- Limited technical customization
+- No code syntax highlighting out of the box
+- Can't integrate with your existing app
+- Less control over SEO and monetization
+
+This approach gives you full control while maintaining simplicity.
+
+### Custom Solutions
+Building a custom blog often means:
+- Setting up a database
+- Creating an admin interface
+- Building an editor
+- Managing user sessions
+- Handling image uploads
+
+This system leverages GitHub's infrastructure for all of that.
+
+### Static Site Generators (Jekyll, Hugo, etc.)
+While excellent tools, traditional SSGs:
+- Often require learning new templating languages
+- Need separate deployment processes
+- Can't easily integrate with existing Next.js apps
+- Have their own complexity for themes and plugins
+
+This approach integrates naturally with Next.js applications while maintaining the benefits of static generation.
+
+## Performance Advantages
+
+The system is pretty fast because:
+
+- Pages are statically generated
+- Images are automatically optimized
+- Styles are purged and minimized
+- JavaScript is minimal
+- Content is served from the edge
+
+## SEO Benefits
+
+The system automatically generates rich metadata for every blog post. When a post is rendered, it extracts key information like the title, description, and cover image from the frontmatter. This data is then used to create comprehensive metadata tags including OpenGraph data for social media sharing. All of this happens at build time, so search engines and social media platforms get perfectly optimized content without any runtime overhead.
+
 ## Future Plans
 
 I'm thinking about adding more features, but want to keep the emphasis on simplicity. Here are some things I would add if I can figure out a way to keep it slick and simple:
@@ -204,7 +206,7 @@ By leveraging GitHub as a CMS and combining it with Next.js, we've created a blo
 - SEO-friendly
 - Free to host
 
-This post itself is written in Markdown (You can see the actual markdown itself [here](https://github.com/Dicklesworthstone/yto_blog_posts/blob/main/03_nextjs_github_blogging_system.md)-- how is that for meta? and served through the system, demonstrating its capabilities. I believe this approach to blogging hits a sweet spot for developers and technical teams. It's simple enough to start using immediately but powerful enough to grow with your needs.
+This post itself is written in Markdown (you can see the actual markdown itself [here](https://github.com/Dicklesworthstone/yto_blog_posts/blob/main/03_nextjs_github_blogging_system.md)— how is that for meta?) and served through the system, demonstrating its capabilities. I believe this approach to blogging hits a sweet spot for developers and technical teams. It's simple enough to start using immediately but powerful enough to grow with your needs.
 
 ## Code
 
