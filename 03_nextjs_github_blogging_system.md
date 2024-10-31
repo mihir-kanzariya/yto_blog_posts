@@ -75,7 +75,7 @@ The core functionality is built with:
 
 The system architecture has three main components working together:
 
-First, there's the GitHub repository that serves as our content store. This is just a collection of Markdown files, each representing a blog post. The files include YAML frontmatter at the top with metadata like titles, dates, and tags.
+First, there's the GitHub repository that serves as our content store. This is just a collection of Markdown files, each representing a blog post. The files include YAML frontmatter at the top with metadata like titles, dates, and tags. You can also include images in the repo, or use a CDN or other host.
 
 Second, we have the content fetching system. Using GitHub's REST API, we first get a list of all Markdown files in the repository. For each file, we then fetch its raw content. The system authenticates with GitHub using an access token and handles the API responses appropriately.
 
@@ -90,7 +90,7 @@ The Markdown processing is handled through a pipeline built on the unified.js ec
 3. The HTML is sanitized to prevent XSS attacks using `rehype-sanitize`
 4. Finally, the clean HTML is stringified into the final output
 
-This pipeline is extensible - you can add transformations for things like syntax highlighting, math equations, or custom components by inserting additional processing steps.
+This pipeline is extensible - you can add transformations for things like syntax highlighting, math equations, or custom components by inserting additional processing steps. These aren't included yet, but could be added.
 
 ## Static Generation
 
