@@ -10,8 +10,6 @@ authorImage: "https://pbs.twimg.com/profile_images/1225476100547063809/53jSWs7z_
 authorBio: "Software Engineer and Founder of YouTube Transcript Optimizer"
 ---
 
-# Next.js GitHub Markdown Blog: A Modern Approach to Technical Blogging
-
 I recently needed a blog for my recent Next.js app, [YouTube Transcript Optimizer](https://youtubetranscriptoptimizer.com/), and wanted something that would look really nice and that could be integrated into my existing Next.js app to keep deployment simple and to give me more control over how it is hosted and configured. My goal was to get something that looked very slick, using modern CSS styling and rich client-side effect, that would look great on desktop and mobile, and most importantly, something that would be very easy and convenient for me to add and edit posts. You may remember seeing my first real blog post made using this system, since I recently posted it [to HN](https://news.ycombinator.com/item?id=41859968). 
 
 The core idea is straightforward: write Markdown files, push them to a GitHub repo, and let Next.js handle the rendering and delivery. It's turned out to be a surprisingly elegant solution that's both powerful and maintenance-free.
