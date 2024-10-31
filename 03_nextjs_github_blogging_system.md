@@ -147,7 +147,6 @@ This system replaces all that with a few static files and Git operations you're 
 Medium is polished but limiting:
 - Content lives on their platform
 - Limited technical customization
-- No code syntax highlighting out of the box
 - Can't integrate with your existing app
 - Less control over SEO and monetization
 
